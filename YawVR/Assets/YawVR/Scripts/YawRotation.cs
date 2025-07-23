@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class YawRotation : MonoBehaviour
 {
-    public float duration = 10f;
     public bool notSpinning = false;
     public float counter = 0f;
 
@@ -18,13 +17,13 @@ public class YawRotation : MonoBehaviour
 
         counter += Time.deltaTime;
 
-        if (counter >= duration)
+        if (counter >= 10f)
         {
             notSpinning = true;
         }
         else
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * 30f);
+            transform.Rotate(Vector3.up * Time.deltaTime * 60f);
         }
     }
 
