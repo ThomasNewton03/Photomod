@@ -4,7 +4,63 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using System.IO;
 
+
+public class YawRotation : MonoBehaviour
+{
+    string file = "standardRoute.txt";
+    List<string> fileContent;
+
+
+    void Start()
+    {
+        string path = Path.Combine(Application.dataPath, file);
+        fileContent = new List<string>(File.ReadAllLines(path));
+        Shuffle(fileContent);
+        StartCoroutine(Execute());
+    }
+
+
+    void Shuffle(List<string> fileContent)
+    {
+        for (int i = 0; i < fileContent.Count; i++)
+        {
+            string temp = fileContent[i];
+            int r = UnityEngine.Random.Range(i, fileContent.Count);
+            fileContent[i] = fileContent[r];
+            fileContent[r] = temp;
+        }
+    }
+
+    IEnumerator Execute()
+    {
+        foreach (string line in fileContent)
+        {
+            string[] sections = line.Split(",");
+            string direction = sections[0];
+            float degrees = int.Parse(sections[1]);
+            float speed = int.Parse(sections[2]);
+            float duration = int.Parse(sections[3]);
+
+            float timer = 0f;
+            Vector3 axis = direction == "L" ? Vector3.down : Vector3.up;
+
+            while (timer < degrees)
+            {
+                transform.Rotate(axis * speed * Time.deltaTime);
+                timer += speed * Time.deltaTime;
+                yield return null;
+            }
+
+            Debug.Log(line);
+            yield return new WaitForSeconds(duration);
+        }
+    }
+}
+
+
+/*
 public class YawRotation : MonoBehaviour
 {
     public bool notSpinning = false;
@@ -76,19 +132,5 @@ public class YawRotation : MonoBehaviour
             }
         }
     }
-
-
-
-        /*counter += Time.deltaTime;
-
-        if (counter >= 10f)
-        {
-            notSpinning = true;
-        }
-        else
-        {
-            transform.Rotate(Vector3.up * Time.deltaTime * 60f);
-        }
-        */
-
 }
+*/
