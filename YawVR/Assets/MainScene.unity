@@ -327,9 +327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d835b7b3d78724ea6e827f9796006f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 10
-  notSpinning: 0
-  counter: 0
 --- !u!1001 &2132837508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,6 +383,26 @@ PrefabInstance:
         type: 3}
       propertyPath: gameName
       value: Photomod
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097211993025946, guid: b2db00cc4030f47faad8506c631645eb,
+        type: 3}
+      propertyPath: connectType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097211993025946, guid: b2db00cc4030f47faad8506c631645eb,
+        type: 3}
+      propertyPath: udpClientPort
+      value: 50020
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097211993025946, guid: b2db00cc4030f47faad8506c631645eb,
+        type: 3}
+      propertyPath: debug_ipAddress
+      value: 192.168.0.100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114097211993025946, guid: b2db00cc4030f47faad8506c631645eb,
+        type: 3}
+      propertyPath: onStateChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
