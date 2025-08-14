@@ -1,7 +1,7 @@
 To download the Unity project:
 
 For this project, ensure that you have Unity Engine downloaded on your device. Additionally, make sure that you have downloaded the Yaw VR configuration software which is available at https://www.yawvr.com/downloads.
-To access the Unity project, go into the terminal on your device and navigate to the folder where you wish to store the project, and then paste the following command: git clone https://github.com/ThomasNewton03/Photomod.git. This will save the project in your chosen location. To open the project, go into Unity Hub and go to Add -> Add project from disk, find the folder named "Photomod", and select the folder named "YawVR" before clicking open. The project may take a few minutes to load in Unity.
+To access the Unity project, go into the terminal on your device and navigate to the folder where you wish to store the project, and then paste the following command: git clone https://github.com/ThomasNewton03/Photomod.git . This will save the project in your chosen location. To open the project, go into Unity Hub and go to Add -> Add project from disk, find the folder named "Photomod", and select the folder named "YawVR" before clicking open. The project may take a few minutes to load in Unity.
 
 <br> <br />
 
